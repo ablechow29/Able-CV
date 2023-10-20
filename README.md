@@ -1,7 +1,7 @@
 # Able's Curriculum Vitae
 
 This repository contains my personal curriculum vitae formatted in LaTeX. 
-The entirety of this CV was written *via* the command line text editor [NeoVim][https://github.com/neovim/neovim] and the [VimTeX][https://github.com/lervag/vimtex] plugin. 
+The entirety of this CV was written *via* the command line text editor [NeoVim](https://github.com/neovim/neovim) and the [VimTeX](https://github.com/lervag/vimtex) plugin. 
 
 The formatting of this CV is based on the following tutorials:
 
