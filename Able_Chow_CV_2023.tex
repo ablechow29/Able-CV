@@ -1,0 +1,616 @@
+% The formatting of this CV is based on this tutorial:
+% https://latex-tutorial.com/cv-latex-guide/
+% and the following:
+% https://youtu.be/VjsX4tznW40?si=GKkojwjbw5OHOPHm
+% https://youtu.be/o5-BZ7JmYWk?si=duvqfFdG3e6r1sq3
+% https://youtu.be/rvgP7IMeUn8?si=Dc0sBV7Wsuw2vnHX
+
+\documentclass{article}
+
+\usepackage{titlesec}
+\titlespacing*{\section}{0pt}{5pt}{8pt}
+\titlespacing*{\subsection}{0pt}{5pt}{8pt}
+
+\usepackage{titling}
+\usepackage[margin=0.7in]{geometry} % set 
+\usepackage[colorlinks=true, urlcolor=blue]{hyperref} % enable hyperlinks and specify color
+\usepackage{fontawesome} % makes icons for email, github, website, etc
+%\usepackage[none]{hyphenat}
+%\pagestyle{empty}
+
+%\usepackage{biber}
+% Bolding names with publications
+% https://tex.stackexchange.com/questions/73136/make-specific-author-bold-using-biblatex
+
+% using titlesec to format sections...
+\titleformat{\section}
+{\Large\bfseries} %formatting e.g., \lowercase
+{} %numbering e.g., \thesection
+{0em} % space between title and everything around it
+{}[\titlerule] 
+
+\titleformat{\subsection}%[runin} additional argument
+{\large\bfseries}
+{}
+{0em}
+{}[\titlerule] 
+% reduce space above the section titles
+
+
+\newcommand{\ts}{\textsuperscript}
+\newcommand{\hindent}{\hangindent=10pt}
+
+\begin{document}
+
+\title{Curriculum Vitae}
+\author{Able Chow}
+\date{}
+
+% using titling to modify title commands
+\renewcommand{\maketitle}{
+    \begin{center}
+        {\huge\bfseries
+        \theauthor}\\
+        \vspace{0.25em}
+        \today\\
+        \faEnvelope: ablechow29@gmail.com \\
+        % \faGlobe: \website{} \\
+        \faGithub: \href{https://github.com/ablechow29}{github.com/ablechow29} \\
+        % \faLinkedin: \href {https://www.linkedin.com/in/able-chow-40012b222}{linkedin.com/able-chow}\\
+    \end{center}
+}
+
+\maketitle
+
+\section{Education}
+\newcommand{\education}[4]{
+    % name of the sudies
+    \noindent \textbf{#1}
+    % year on the right side
+    \hfill
+    \framebox{% year inside a frame box
+        \parbox{6em}{%
+    \centering \textbf{#2}}} \par
+    %new paragraph with the institution in italics
+    \noindent {#3} \par
+    %description with no hanging and in smaller text
+    \vspace*{0.2em}
+    \noindent\small #4
+    % back to normal size
+    \vspace*{0.5em}
+\normalsize \par}
+
+\education {M.S., Entomology} {Dec. 2022} 
+{Department of Entomology, Louisiana State University} 
+{Thesis Title: ``Review of Structural Color in the Genus \textit{Chrysochroa} Dejean, 1833 (Coleoptera: Buprestidae)" (\href{https://repository.lsu.edu/gradschool_theses/5682/}{Link})\\ 
+Major Advisor: Dr. Nathan P. Lord \\
+Committee: Dr. Bodo Wilts (University of Salzburg, Austria), Dr. Michael Stout (LSU), and Dr. Brant Faircloth (LSU)}
+
+\education {B.S., Entomology} {May. 2018} {Department of Entomology, University of Florida}
+{Major Advisor: Dr. Rebecca Baldwin.}
+
+\section{Research Experience}
+\newcommand{\Research}[4]{
+    % name of the sudies
+    \noindent \textbf{#1}
+    % year on the right side
+    \hfill
+    \framebox{% year inside a frame box
+        \parbox{6em}{%
+    \centering \textbf{#2}}} \par
+    %new paragraph with the institution in italics
+    \noindent {#3} \par
+    %description with no hanging and in smaller text
+    \vspace*{0.2em}
+    \noindent\small #4
+    % back to normal size
+    \vspace*{0.5em}
+\normalsize \par}
+
+\Research{Graduate Research Assistant} {2018--2022} {Characterizing the structural color of \textit{Chrysochroa} jewel beetles (NSF Funded Project, \#1841704)}{Principal Investigator: Dr. Nathan P. Lord, Louisiana State University}
+
+\Research{Slide Preparator}
+{2017--2018}{Developing identification tools for \textit{Anastrepha} fruit fly larva (USDA Funded Project)}
+{Supervisor: Dr. Gary Steck, Florida Department of Agriculture and Consumer Services}
+
+\Research{Undergraduate Research Assistant}
+{2016--2017}
+{Firefly flash pattern analysis project}
+{Supervisor: Dr. Marc A. Branham, University of Florida}
+
+\section{Awards and Grants}
+\newcommand{\entryB}[4]{
+    \noindent
+    \begin{minipage}[t]{.73\textwidth}
+        \textbf{#1} \\
+        \hindent
+        \small{#2}
+    \end{minipage}
+    \begin{minipage}[t]{.12\textwidth}
+        \hfill{#3}
+    \end{minipage}
+    \begin{minipage}[t]{.13\textwidth}
+        \hfill{#4}
+    \end{minipage}
+    \normalsize \par
+}
+
+\entryB{The Roussel Scholarship Graduate Student Award in Entomology}
+{Louisiana State University}
+{\$2000} 
+{Sep. 2022} %{Sep. 23, 2022}
+
+\entryB{Graduate Student Research Enhancement Award: Improvement Award}
+{The Coleopterists Society}
+{\$2000} 
+{Jun. 2021} %{Jun. 24, 2021}
+
+\entryB{Graduate Student Association Travel Award}
+{Louisiana State University} 
+{\$200}
+{Oct. 2019} %{Oct. 31, 2019}
+
+\section{Publications}
+%\section{Extension Articles}
+\newcommand{\BugBiz}[5]{
+    \noindent
+    \hindent
+    {#1} % Authorship string
+    {#2}, % Article title
+    {#3}, % year
+    Bug Biz Series, LSU AgCenter Pub 
+    {#4}
+    Louisiana State University,
+    (\href{#5}{Link}).%url\par
+}
+
+\BugBiz{\textbf{\textbf{Chow, A.,}} Huval, F., Mulcahy, M., \& Reagan, T. E.,}
+{\textit{Necrophila americana}, American Carrion Beetle (Coleoptera: Silphidae)}
+{2021}
+{3787}
+{https://www.lsuagcenter.com/articles/page1619566292701}
+
+\BugBiz{\textbf{\textbf{Chow, A.,}} Huval, F., Reagan, T. E., \& Carlton, C.,}
+{\textit{Photinus pyralis}, Big Dipper Firefly (Coleoptera: Lampyridae)}
+{2020}
+{3717}
+{https://www.lsuagcenter.com/profiles/bneely/articles/page1587050468972}
+
+\BugBiz{\textbf{\textbf{Chow, A.,}} Huval, F., Carlton, C., \& Raegan, T. E.,} 
+{\textit{Pyractomena} spp., Spring Fireflies (Coleoptera: Lampyridae)}
+{2020}
+{3738}
+{https://www.lsuagcenter.com/profiles/bneely/articles/page1590080943471}
+
+\section{Contributions to Professional Meetings}
+\newcommand{\presentation}[6]{
+    \noindent
+    \hindent
+    \small
+    {#1} % Authorship string
+    {#2}, % Presentation title
+    {#3}, % Conference name
+    {#5}, % location
+    {#4}. % Presentation date
+    (\href{#6}{Link}) %url to online program
+    \normalsize \par
+}
+% Lord, N.P., what is the proper formatting of name acronyms?
+% make all presentation titles title case
+
+\subsection{Presentations}
+\presentation{\textbf{Chow, A.,} Wilts, B., Lord, N. P., \& Xiao, Y.,}
+{Beetles in Golden Skin: Structural Color in \textit{Chrysochroa} Jewel Beetles}
+{Society for Integrative and Comparative Biology Annual Meeting}
+{Jan. 3, 2023}
+{Austin, TX}
+{https://sicb.org/wp-content/uploads/2023/04/2023-SICB-Program-R5.pdf}
+
+\presentation{\textbf{Chow, A.,} Wilts, B., Xiao, Y., \& Lord, N. P.,}
+{The Spectacular and Peculiar Structural Color of \textit{Chrysochroa} Jewel Beetles (Coleoptera: Buprestidae)} 
+{Entomological Society of America (ESA), Entomological Society of Canada (ESC), and Entomological Society of British Colombia (ESBC) Joint Annual Meeting}
+{Nov. 16, 2022}
+{Vancouver, BC, Canada}
+{https://cdmcd.co/B7pd5w}
+
+\presentation{\textbf{Chow, A.,}}
+{The Structural Diversity of Multilayer Reflectors in the Jewel Beetle genus \textit{Chrysochroa}}
+{Able Chow M.S. Exit Seminar, Department of Entomology, LSU}
+{Oct. 7, 2022}
+{Baton Rouge, LA}
+{https://youtu.be/nBmbMNkQpHo}
+
+\presentation{Canton, R. C., \textbf{Chow, A.,} Moncrieff, A. E., Brumfield, R. T., Lord, N. P., \& Faircloth, B. C.,}
+{Evolution of Super-Black Plumage in \textit{Lepidothrix} (Pipridae, Passeriformes)}
+{American Ornithological Society and Birds of the Caribbean 2022}
+{Jun. 30, 2022}
+{San Juan, Puerto Rico}
+{https://drive.google.com/file/d/1Jgpf3TN-OHAr3bEgD9NFvzokJmAGDYTp/view?usp=sharing}
+
+\presentation{\textbf{Chow, A.,} \& Lord, N. P.,}
+{Taxonomy in Color: Illuminating the Taxonomy of \textit{Chrysochroa} by Understanding Structural Color}
+{Society for Integrative and Comparative Biology Annual Meeting} 
+{Jan. 6, 2022}
+{Virtual}
+{https://burkclients.com/sicb/meetings/2022/site/files/2022_SICB_Conference_Program.pdf}
+
+\presentation{\textbf{Chow, A.,} \& Lord, N. P.,}
+{Taxonomy in Color, Revision of the Subgenus \textit{Chrooxantha} (Coleoptera: Buprestidae: \textit{Chrysochroa}) Using Morphological and Color Data}
+{Entomological Society of America Annual Meeting}
+{Nov. 2, 2021}
+{Denver, CO}
+{https://entomology2021.eventscribe.net/index.asp?presTarget=1760992}
+
+\presentation{\textbf{Chow, A.,} \& Lord, N. P.,}
+{Color and Species Delimitation in Jewel Beetles: From Subjective Perception to Objective Definition}
+{11\ts{th} Annual LSU Entomology Department Graduate Student Symposium}
+{Oct. 22, 2021}
+{Baton Rouge, LA}
+{https://drive.google.com/file/d/1MhpWrPSVbbUESYt6N1W_Jg5O2Q3pQp1z/view?usp=sharing}
+
+\presentation{\textbf{Chow, A.,} \& Lord, N. P.,}
+{Taxonomy in Color: Understanding Structural Color Informs Jewel Beetle Taxonomy}
+%what is the proper title????
+{Living Light Online Early Career Researcher Conference}
+{Sep. 22, 2021}
+{Virtual}
+{https://drive.google.com/drive/folders/1Cw7rDHG5KeVhH_f5XXtDSGHHVbAQ9A5N?usp=drive_link}
+
+\presentation{\textbf{Chow, A.,} \& Lord, N. P.,}
+{Jewels of Iridescence: Mechanisms of Structural Color and its Significance in Insect Systematics}
+{Jan. 3--Feb. 28 2021}
+{Society for Integrative and Comparative Biology Annual Meeting} {Virtual}
+{https://sicb.org/wp-content/uploads/2021/07/2021-SICB-Program-Book.pdf}
+
+\presentation{\textbf{Chow, A.,} \& Lord, N. P.,}
+{Jewels of iridescence: Mechanisms of structural color and implications for taxonomy}
+{Entomological Society of America Annual Meeting}
+{Nov. 19, 2019}
+{St. Louis, MO}
+{https://www.entsoc.org/sites/default/files/files/Annual\%20Meeting/2019\%20ESA\%20Annual\%20Meeting-Program-web.pdf}
+
+\presentation{\textbf{Chow, A.,} \& Lord, N. P.,}
+{When Color Science Meets Taxonomy: Revision of Subgenus \textit{Chrooxantha} Hołyński,2009}
+{10\ts{th} Annual LSU Entomology Department Graduate Student Symposium}
+{Oct. 9, 2019}
+{Baton Rouge, LA}
+{https://drive.google.com/file/d/1ZViTaYaxf5ADqvz2CkGRrdrPQo72N4lX/view?usp=sharing}
+
+\presentation{\textbf{Chow, A.,} \& Lord, N. P.,}
+{Iridescent Characters: a Taxonomic Revision of Subgenus \textit{Chrooxantha} (Coleoptera: Buprestidae: \textit{Chrysochroa})}
+{LSU Department of Entomology Seminar}
+{Sep. 20, 2019}
+{Baton Rouge, LA}
+{https://drive.google.com/file/d/17Uy-8B0jXyXhiPVohnR0msqg-Do9Diof/view?usp=sharing}
+
+\subsection{Posters}
+\presentation{\textbf{Chow, A.,} \& Lord, N. P.,}
+{The Physics, Biology, and Evolution of Cuticular Iridescence in Jewel Beetles}
+{9\ts{th} Annual LSU Entomology Department Graduate Student Symposium}
+{Oct. 18, 2018}
+{Baton Rouge, LA}
+{https://drive.google.com/file/d/1vaKRlffkIMk2d7JBE3QfCNgHwQnY4m3X/view?usp=sharing}
+
+\presentation{\textbf{Chow, A.,} Keller, O., Ivie, M., \& Branham, M. A.,}
+{Developing a Data Pipeline (workflow) to Digitally Record and Analyze Firefly Flash Patterns}
+{International Firefly Symposium}
+{Apr. 25--26, 2017}
+{Taipei, Taiwan}
+{https://static1.squarespace.com/static/59028899b3db2bade49af818/t/59b2d35149fc2b50d078b3d1/1504891730888/Proceedings+of+2017+IFS.pdf}
+
+\presentation{\textbf{Chow, A.,} Keller, O., Ivie, M., \& Branham, M. A.,}
+{Developing a Data Pipeline (workflow) to Digitally Record and Analyze Firefly Flash Patterns}
+{Entomological Society of America Southeastern Branch Conference}
+{Mar. 14, 2017}
+{Memphis, TN}
+{https://www.entsoc.org/sites/default/files/files/2017_SEB_Program_Book.pdf}
+
+
+\section{Exhibitions}
+
+\newcommand{\exhibition}[4]{
+    \noindent
+    \hindent
+    \small
+    \textbf{#1} %what is it?
+    {#2}, % Detail and Institution
+    {#3}, % Conference name
+    {#4} % location
+    \normalsize \par
+}
+
+% email Dr. 
+\exhibition{Contributor of \textit{Iridescence: Interdisciplinary Inspiration}}
+{Capsule exhibition of larger Louisiana Art \&Science Museum \textit{Iridescence} exhibition, highlighting art and science collaboration}
+{Mar. 2--16, 2022}
+{Boyce Gallery at the College of Art \& Design, Louisiana State University.}
+
+\exhibition {Contributor of \textit{Iridescence}:}
+{Featured exhibition at the Louisiana Art \& Science Museum, Baton Rouge.} 
+{Jul. 17, 2021--Jul. 31, 2022}
+{This exhibition features the scientific works of Dr. Nathan Lord and his graduate students Able Chow and Sierra Weir, invited works from renowned artists, and a juried competition. \href{https://www.exploreiridescence.com/}{(Link)}}
+
+\section{Training and Skill}
+\subsection{Training and Workshop Attended}
+%\section{Training and Workshop Attended}
+\newcommand{\train}[4]{
+    \noindent
+    \hindent
+    \textbf{#1}\\ % training subject
+    {#2}, % Institution
+    {#3}, % Trainers
+    \small{#4}. % Date
+    \par\normalsize
+}
+
+\train{SEM specimen preparation and scope operation training}
+{LSU Shared Instrument Facilities}
+{Dr. Yang Mu \& Dr. Dongmei Cao}
+{Jan. 26--Feb. 1, 2021}
+
+\train{TEM specimen preparation and scope operation training}
+{Georgia Microscopy, University of Georgia}
+{Dr. John Shields \& Ms. Mary Ard}
+{Oct. 28--30, 2020}
+
+\subsection{Student Training Provided}
+%\section{Student Training Provided}
+\textbf{Imaging System Workshop for Entomology Graduate Students}, 
+\small{Jan. 13 \& Apr. 6, 2022.}\normalsize
+
+\subsection{Other Skills}
+\newcommand{\skills}[2]{
+    \noindent
+    \begin{minipage}[t]{.50\textwidth}
+    \textbf{#1}:
+    \end{minipage}
+    \begin{minipage}[t]{.45\textwidth}
+    {#2}\hfill
+    \end{minipage}
+    \normalsize \par
+}
+
+\skills{Programming Languages}{\LaTeX, R, BASH}
+\skills{Integrated Development Environment}{Vim, Neovim, R Studio}
+
+\section{Teaching Assistantship}
+\newcommand{\TA}[5]{
+    \noindent
+    \hindent
+    \textbf{#1}, %course
+    {#2}, % Institution
+    {#3}, % Trainers
+    {#4}.\\ % Date
+    \small{#5}. % footnotes
+    \normalsize\par
+}
+
+\TA{General Entomology (ENTM 7001)}
+{Department of Entomology}
+{Louisiana State University}
+{Fall 2021}
+{2 lectures given: Insect Behavior and Insect Morphology}
+
+\section{Collections Research}
+\newcommand{\entryA}[3]{
+    \noindent
+    \begin{minipage}[t]{.73\textwidth}
+    \textbf{#1}
+    \small{#2}
+    \end{minipage}
+    \begin{minipage}[t]{.25\textwidth}
+    \hfill{#3}
+    \end{minipage}
+    \normalsize \par
+}
+
+\entryA{Texas A\&M University Insect Collection}{College Station, Texas}
+{Sep. 17--18, 2020}
+
+\entryA{Museum National d’Histoire Naturelle} 
+{Paris, France}
+{Oct. 13--20, 2019}
+
+\entryA{National Museum}{Prague, Czech Republic}{Oct. 3--12, 2019}
+
+\entryA{California State Arthropod Collection}{Sacramento, California}{Jul. 28--Aug. 3, 2019}
+
+\entryA{California Academy of Sciences}{San Francisco, California}{Jul. 24--27, 2019}
+
+\section{Conference Participation}
+\newcommand{\conference}[3]{
+    \noindent
+    \hindent
+    \small
+    \textbf{#1}, % Conference name
+    {#3}, % location
+    {#2}. % Conference date
+    \normalsize \par
+}
+
+\conference{Society for Integrative and Comparative Biology Annual Meeting}
+{Jan. 3--6, 2023}
+{Austin, TX}
+
+\conference{ESA, ESC, and ESBC Joint Annual Meeting}
+{Nov. 13--16, 2022}
+{Vancouver, BC, Canada}
+
+\conference{Society for Integrative and Comparative Biology Annual Meeting}
+{Jan. 14--Mar. 31, 2022}
+{Virtual}
+
+\conference{Entomological Society of America Annual Meeting}
+{Oct. 31--Nov. 3, 2021}
+{Denver, CO}
+
+\conference{11\ts{th} Annual LSU Entomology Department Graduate Student Symposium}
+{Oct. 22, 2021}
+{Baton Rouge, LA}
+
+\conference{Living Light Online Early Career Researcher Conference}
+{Sep. 22--23, 2021}
+{Virtual}
+
+\conference{Society for Integrative and Comparative Biology Annual Meeting}
+{Jan. 3--Feb. 28, 2021}
+{Virtual}
+
+\conference{Entomological Society of America Annual Meeting }
+{Nov. 17--20, 2019}
+{St. Louis, MO}
+
+\conference{10\ts{th} Annual LSU Entomology Department Graduate Student Symposium}
+{Oct. 25, 2019}
+{Baton Rouge, LA}
+
+\conference{ESA, ESC, and ESBC Joint Annual Meeting}
+{Nov. 13--16, 2018}
+{Vancouver, BC, Canada}
+
+\conference{9\ts{th} Annual LSU Entomology Department Graduate Student Symposium. }
+{Oct. 15, 2018}
+{Baton Rouge, LA}
+
+\conference{Entomological Society of America Annual Meeting}
+{Nov. 5--8, 2017}
+{Denver, CO}
+
+\conference{International Firefly Symposium}
+{Apr. 24--26, 2017}
+{Taipei, Taiwan}
+
+\conference{Entomological Society of America Southeastern Branch Conference}
+{Mar. 12--15, 2017}
+{Memphis, TN}
+
+
+\section{Outreach and Services}
+\newcommand{\outreach}[5]{
+    \noindent
+    \normalsize
+    \textbf{#1} % Role
+    {#2}, % Event
+    \small
+    {#3}, % location
+    {#4}. % date
+    \normalsize\par
+}
+
+\outreach{Volunteer}
+{for Bioblitz 2022 at the BREC Forest Community Park}
+{Baton Rouge, Louisiana}
+{Apr. 2022}
+
+\outreach{Volunteer}
+{for AgMagic 2022, at the Parker Coliseum in LSU}
+{Baton Rouge, LA}
+{Mar. 2022}
+
+\outreach{Guest educator}
+{for BREC Zoo Children’s Summer Camp}
+{Baton Rouge, LA}
+{Jul. 2021}
+
+\outreach{Volunteer}
+{for BREC Bluebonnet Children’s Summer Camp}
+{Baton Rouge, LA}
+{Jun. 2021}
+
+\outreach{Assisted}
+{in producing the online format of 4-H University Insect Identification Contest}
+{Baton Rouge, LA}
+{Jun. 2020}
+
+\outreach{Volunteer}
+{for Night at the Museum, at the Louisiana State Arthropod Museum}
+{Baton Rouge, LA}
+{Sep. 2019}
+
+\outreach{Volunteer}
+{for AgMagic at the Parker Coliseum in LSU}
+{Baton Rouge, LA}
+{Apr. 2019}
+
+\outreach{Volunteer}
+{for UF Department of Entomology outreach booth at Florida State Fair}
+{Tampa, FL}
+{Feb. 2017}
+
+\outreach{Volunteer}
+{for UF Department of Entomology outreach booth at Florida State Fair}
+{Tampa, FL}
+{2015}
+
+\section{References}
+\newcommand{\References}[5]{
+    \noindent
+    \begin{minipage}[t]{.25\textwidth}
+    \textbf{#1} % Name
+    \end{minipage}
+    \begin{minipage}[t]{.70\textwidth}
+    \noindent
+    \small
+    {#2}, % Position
+    {#3}, % Institution
+    Email: {#4} % year
+    \end{minipage}
+    \normalsize\par
+}
+
+% Dr. Bodo Wilts, Professor of Materials Physics, Paris London Universität Salzburg, Email: bodo.wilts@plus.ac.at
+% Fix the spacing between Dr. ...
+
+\References{Dr. Christopher Carlton}
+{Entomology Diagnostician, Louisiana State University}
+{Director Emeritus, Louisiana State Arthropod Museum}
+{ccarlt@lsu.edu}
+
+\References{Ms. Victoria Bayless}
+{Curator}
+{Louisiana State Arthropod Museum}
+{vbayless@agcenter.lsu.edu}
+
+\References{Dr. Ilgoo Kang}
+{Assistant Professor}
+{Kyungpook National University}
+{ikang@knu.ac.kr}
+
+\References{Dr. Gary Steck}
+{Taxonomic Entomologist and Curator (Diptera)}
+{Florida Department of Agriculture and Consumer Services}
+{Gary.Steck@freshfromflorida.com}
+
+\References{Dr. Marc Branham}
+{Associate Professor}
+{University of Florida}
+{marcbran@ufl.edu}
+ 
+\end{document}
+
+\subsection{Field Collecting}
+\newcommand{\field}[4]{
+    \begin{minipage}[t]{.73\textwidth}
+    \textbf{#1}\\ %location
+    \small{#2} %methods
+    \small{#3} % for what
+    \end{minipage}
+    \begin{minipage}[t]{.25\textwidth}
+    \hfill\small{#4} % date
+    \end{minipage}
+    \normalsize \par
+}
+
+\field
+{Idlewilde Research Station, Baton Rouge, LA}
+{Louisiana State Arthropod Collection}
+{Malaise trap, light trap}
+
+%{May. 29, 2019--Jun. 22, 2020}
+{Rosedale County, Baton Rouge, LA}
+
+{Insect Taxonomy Class (ENTM 4005)}
+{Idlewilde Research Station, Baton Rouge, LA}{Spring semesters, 2019--2022}
+{Malaise trap, light trap}
+
+
