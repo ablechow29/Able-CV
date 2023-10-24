@@ -1,7 +1,8 @@
 # Able's Curriculum Vitae
 
-This repository contains my personal curriculum vitae formatted in LaTeX. 
-The entirety of this CV was written *via* the command line text editor [NeoVim](https://github.com/neovim/neovim) and the [VimTeX](https://github.com/lervag/vimtex) plugin. 
+This repository contains my personal curriculum vitae formatted in LaTeX. The LaTeX codes within the`.tex` file is annotated to briefly explain what they do. 
+
+The entirety of this CV was written *via* the command line text editor [NeoVim](https://github.com/neovim/neovim) with the [VimTeX](https://github.com/lervag/vimtex) plugin. 
 
 The formatting of this CV is based on the following tutorials:
 
@@ -13,4 +14,4 @@ https://youtu.be/o5-BZ7JmYWk?si=duvqfFdG3e6r1sq3
 
 https://youtu.be/rvgP7IMeUn8?si=Dc0sBV7Wsuw2vnHX
 
-Type the command ``` pdflatex Able_Chow_CV_2023.tex``` To generate the PDF of this CV from the `.tex` file 
+Type the command ```pdflatex Able_Chow_CV_2023.tex``` to generate the PDF of this CV from the `.tex` file 
